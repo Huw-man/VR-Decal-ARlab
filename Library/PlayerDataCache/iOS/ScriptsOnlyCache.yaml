@@ -5,6 +5,16 @@ ScriptsOnlyBuild:
     - OvrAvatarSettings
     - SpawnManager
     - UnityEngine.XR.ARFoundation.Samples.PlaceOnPlane
+    GitHub.Unity.45.dll:
+    - GitHub.Unity.ApplicationCache
+    - GitHub.Unity.BranchesCache
+    - GitHub.Unity.EnvironmentCache
+    - GitHub.Unity.GitAheadBehindCache
+    - GitHub.Unity.GitLocksCache
+    - GitHub.Unity.GitLogCache
+    - GitHub.Unity.GitStatusCache
+    - GitHub.Unity.RepositoryInfoCache
+    - GitHub.Unity.Window
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.ARFoundation.dll:
@@ -56,56 +66,64 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11188}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11482}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11678}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11900}
     - Class: 114
-      Script: {instanceID: 11876}
+      Script: {instanceID: 11916}
     - Class: 114
-      Script: {instanceID: 11896}
+      Script: {instanceID: 11936}
     - Class: 114
-      Script: {instanceID: 11908}
+      Script: {instanceID: 11948}
     - Class: 114
-      Script: {instanceID: 11956}
+      Script: {instanceID: 12000}
     - Class: 114
-      Script: {instanceID: 12182}
+      Script: {instanceID: 12318}
     - Class: 114
-      Script: {instanceID: 12386}
+      Script: {instanceID: 12522}
     - Class: 114
-      Script: {instanceID: 12712}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 12784}
+      Script: {instanceID: 12924}
     - Class: 114
-      Script: {instanceID: 13004}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13082}
+      Script: {instanceID: 13148}
     - Class: 114
-      Script: {instanceID: 13132}
+      Script: {instanceID: 13228}
     - Class: 114
-      Script: {instanceID: 13162}
+      Script: {instanceID: 13278}
     - Class: 114
-      Script: {instanceID: 13354}
+      Script: {instanceID: 13310}
     - Class: 114
-      Script: {instanceID: 13498}
+      Script: {instanceID: 13506}
     - Class: 114
-      Script: {instanceID: 13616}
+      Script: {instanceID: 13594}
     - Class: 114
-      Script: {instanceID: 32580}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 40346}
+      Script: {instanceID: 13776}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -133,6 +151,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -767,6 +787,12 @@ ScriptsOnlyBuild:
     className: ARTrackedImage
   - hash:
       serializedVersion: 2
+      Hash: 88a84d7a3bade3448e500125531f3267
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Monster
+  - hash:
+      serializedVersion: 2
       Hash: ca2a58dd7363525cbd2f65b2a150b41b
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
@@ -893,6 +919,12 @@ ScriptsOnlyBuild:
     className: ARMeshManager
   - hash:
       serializedVersion: 2
+      Hash: 210dc32c011b41e9fb9909127a53b145
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnManager
+  - hash:
+      serializedVersion: 2
       Hash: 21d73eda81c18eacd2c91ad5dfaf2e32
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1011,18 +1043,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 85055b24296e27bd944d78d855cda4ef
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Monster
-  - hash:
-      serializedVersion: 2
-      Hash: 210dc32c011b41e9fb9909127a53b145
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SpawnManager
   platform: 9
   scenePathNames:
   - Assets/Scenes/lab.unity
