@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E3F6C276-5259-A7BA-4184-E3E86CAB5153}</ProjectGuid>
+    <ProjectGuid>{293179D2-F1F6-5DF5-10A5-C4CE634B9ED8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Gun.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
@@ -670,90 +671,90 @@
       <HintPath>S:/Unity/2019.4.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARKit">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARKit.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARKit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARCore">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARCore.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARKit.Editor">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/Unity.XR.ARKit.Editor.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/Unity.XR.ARKit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>S:/Unity/Projects/VR Decal lab fix/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>S:/Unity/Projects/VR Decal new lab/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="RuntimeInspector.Runtime.csproj">
-      <Project>{AB43FD76-D05B-C96B-09DB-84BBD8338532}</Project>
-      <Name>RuntimeInspector.Runtime</Name>
-    </ProjectReference>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{51D32D30-27C3-02B5-BF35-3A7867F3D960}</Project>
+      <Project>{ACB4C750-2460-03D0-0CE9-A2D396C3586F}</Project>
       <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{35B99742-035A-D6CC-E742-05B311340E37}</Project>
+      <Project>{E8B8C283-6529-9211-BB25-28C877FDF89F}</Project>
       <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="RuntimeInspector.Runtime.csproj">
+      <Project>{99052D40-A706-D08A-9675-EA5A4E635ED0}</Project>
+      <Name>RuntimeInspector.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

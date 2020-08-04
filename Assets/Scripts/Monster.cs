@@ -8,7 +8,6 @@ using UnityEngine.XR.ARSubsystems;
 public class Monster : MonoBehaviour
 {
     public GameObject target;
-    ARSessionOrigin m_sessionOrigin;
 
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
@@ -20,7 +19,6 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_sessionOrigin = GetComponent<ARSessionOrigin>();
         target = GameObject.FindGameObjectWithTag("MainCamera");
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();

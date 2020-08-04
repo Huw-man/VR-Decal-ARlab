@@ -739,6 +739,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -752,10 +753,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 663ee5e5-8cd9-4cf7-879d-ec88ec21192b
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: VR Decal lab fix
+  organizationId: unity_awlhtt32jqkmrq
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
