@@ -21,16 +21,18 @@ public class Monster : MonoBehaviour
     void Start()
     {
         m_sessionOrigin = GetComponent<ARSessionOrigin>();
-        target = GameObject.FindWithTag("Respawn");
-        target.transform.position = new Vector3(0, 0, 0);
+        target = GameObject.FindGameObjectWithTag("MainCamera");
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(spawnClip);
+
+        navMeshAgent.destination = target.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(target.transform.position);
+        navMeshAgent.destination = target.transform.position;
+        //Debug.Log(target.transform.position);
     }
 }
