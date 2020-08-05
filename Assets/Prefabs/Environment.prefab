@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1730542147}
   - component: {fileID: 1730542148}
+  - component: {fileID: 919622203}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -51,6 +52,20 @@ MonoBehaviour:
   monsterPrefab: {fileID: 1057581050825486, guid: 6428f099adfd71842b1f46a0c4ac98a3,
     type: 3}
   setTarget: {fileID: 0}
+--- !u!114 &919622203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730542146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f88a5748e8343b418fc476c800472c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerState: 0
+  maxHealth: 100
 --- !u!1 &2020053383
 GameObject:
   m_ObjectHideFlags: 0
