@@ -2,35 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
 
 public class Monster : MonoBehaviour
 {
-    public GameObject target;
+    public GameObject player;
+    public float attackRange;
+
+    public int damage;
+    private Player target;
 
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
+    private Animator animator;
 
     public AudioClip spawnClip;
     public AudioClip hitClip;
     public AudioClip dieClip;
 
-    // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("MainCamera");
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(spawnClip);
-
-        navMeshAgent.destination = target.transform.position;
+        animator = GetComponent<Animator>();
+        target = GameObject.Find("ScriptManager").GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.destination = target.transform.position;
-        //Debug.Log(target.transform.position);
+        navMeshAgent.SetDestination(player.transform.position);
+
+        Vector3 distanceVector = transform.position - player.transform.position;
+        distanceVector.y = 0;
+        float distance = distanceVector.magnitude;
+
+        if (distance <= attackRange)
+        {
+            animator.SetBool("Attack", true);
+        }
+    }
+
+    public void Attack()
+    {
+        target.Hurt(damage);
+        Debug.Log(target.getHealth());
+        audioSource.PlayOneShot(hitClip);
     }
 }
