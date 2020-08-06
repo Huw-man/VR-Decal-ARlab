@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
-    public GameObject player;
     public float attackRange;
 
     public int damage;
@@ -31,9 +30,9 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(player.transform.position);
+        navMeshAgent.SetDestination(GameObject.Find("AR Camera").transform.position);
 
-        Vector3 distanceVector = transform.position - player.transform.position;
+        Vector3 distanceVector = transform.position - GameObject.Find("AR Camera").transform.position;
         distanceVector.y = 0;
         float distance = distanceVector.magnitude;
 
