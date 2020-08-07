@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        animator = transform.Find("model").GetComponent<Animator>();
+        animator = transform.Find("Model").GetComponent<Animator>();
         particleSystem = transform.Find("MuzzleFlashEffect").GetComponent<ParticleSystem>();
     }
 
