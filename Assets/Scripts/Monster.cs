@@ -9,6 +9,7 @@ public class Monster : MonoBehaviour
 
     public int damage;
     private Player target;
+    private HealthBar healthbar;
 
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
@@ -25,6 +26,7 @@ public class Monster : MonoBehaviour
         audioSource.PlayOneShot(spawnClip);
         animator = GetComponent<Animator>();
         target = GameObject.Find("ScriptManager").GetComponent<Player>();
+        healthbar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class Monster : MonoBehaviour
     public void Attack()
     {
         target.Hurt(damage);
+        healthbar.SetHealth(target.getHealth());
         Debug.Log(target.getHealth());
         audioSource.PlayOneShot(hitClip);
     }
