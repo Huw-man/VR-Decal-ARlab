@@ -121,6 +121,7 @@
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\Scripts\Flash.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\PlaceOnPlane.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
