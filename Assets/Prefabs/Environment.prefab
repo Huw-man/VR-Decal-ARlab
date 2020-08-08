@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 919622203}
   m_Layer: 0
   m_Name: ScriptManager
-  m_TagString: Untagged
+  m_TagString: ScriptManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -51,7 +51,6 @@ MonoBehaviour:
   spawnTime: 5
   monsterPrefab: {fileID: 1057581050825486, guid: 6428f099adfd71842b1f46a0c4ac98a3,
     type: 3}
-  setTarget: {fileID: 0}
 --- !u!114 &919622203
 MonoBehaviour:
   m_ObjectHideFlags: 0

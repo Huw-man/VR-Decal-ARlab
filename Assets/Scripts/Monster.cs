@@ -19,28 +19,47 @@ public class Monster : MonoBehaviour
     public AudioClip hitClip;
     public AudioClip dieClip;
 
+    public enum State
+    {
+        ALIVE, DYING, SINKING
+    }
+
+    public State monsterState = State.ALIVE;
+    public int maxHealth;
+    private int currHealth;
+
+    public float sinkSpeed;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(spawnClip);
         animator = GetComponent<Animator>();
-        target = GameObject.Find("ScriptManager").GetComponent<Player>();
-        healthbar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
+        target = GameObject.FindWithTag("ScriptManager").GetComponent<Player>();
+        healthbar = GameObject.FindWithTag("HealthBar").GetComponent<HealthBar>();
+        currHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(GameObject.Find("AR Camera").transform.position);
-
-        Vector3 distanceVector = transform.position - GameObject.Find("AR Camera").transform.position;
-        distanceVector.y = 0;
-        float distance = distanceVector.magnitude;
-
-        if (distance <= attackRange)
+        if (monsterState == State.ALIVE)
         {
-            animator.SetBool("Attack", true);
+            navMeshAgent.SetDestination(GameObject.FindWithTag("MainCamera").transform.position);
+
+            Vector3 distanceVector = transform.position - GameObject.Find("MainCamera").transform.position;
+            distanceVector.y = 0;
+            float distance = distanceVector.magnitude;
+
+            if (distance <= attackRange)
+            {
+                animator.SetBool("Attack", true);
+            }
+        }else if (monsterState == State.SINKING)
+        {
+            float sinkDistance = sinkSpeed * Time.deltaTime;
+            transform.Translate(new Vector3(0, -sinkDistance, 0));
         }
     }
 
@@ -50,5 +69,33 @@ public class Monster : MonoBehaviour
         healthbar.SetHealth(target.getHealth());
         Debug.Log(target.getHealth());
         audioSource.PlayOneShot(hitClip);
+    }
+
+    public void Hurt(int damage)
+    {
+        if (monsterState == State.ALIVE)
+        {
+            animator.SetTrigger("Hurt");
+            currHealth -= damage;
+            if (currHealth <= 0)
+            {
+                Die();
+            }
+        }
+    }
+
+    void Die()
+    {
+        monsterState = State.DYING;
+        audioSource.PlayOneShot(dieClip);
+        navMeshAgent.isStopped = true;
+        animator.SetTrigger("Dead");
+    }
+
+    public void StartSinking()
+    {
+        monsterState = State.SINKING;
+        navMeshAgent.enabled = false;
+        Destroy(gameObject, 5);
     }
 }

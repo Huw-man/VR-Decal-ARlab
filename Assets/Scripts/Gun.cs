@@ -10,6 +10,8 @@ public class Gun : MonoBehaviour
     private Animator animator;
     private ParticleSystem particleSystem;
 
+    public int damage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +32,19 @@ public class Gun : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
         animator.SetTrigger("Fire");
         particleSystem.Play();
+
+        RaycastHit hit;
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        Vector3 origin = camera.transform.position;
+        Vector3 direction = camera.transform.forward;
+        if (Physics.Raycast(origin, direction, out hit, 100f))
+        {
+            GameObject hitObject = hit.collider.gameObject;
+            if (hitObject.CompareTag("Monster"))
+            {
+                Monster monsterScript = hitObject.GetComponent<Monster>();
+                monsterScript.Hurt(damage);
+            }
+        }
     }
 }
