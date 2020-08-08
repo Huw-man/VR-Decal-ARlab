@@ -48,7 +48,7 @@ public class Monster : MonoBehaviour
         {
             navMeshAgent.SetDestination(GameObject.FindWithTag("MainCamera").transform.position);
 
-            Vector3 distanceVector = transform.position - GameObject.Find("MainCamera").transform.position;
+            Vector3 distanceVector = transform.position - GameObject.FindWithTag("MainCamera").transform.position;
             distanceVector.y = 0;
             float distance = distanceVector.magnitude;
 
