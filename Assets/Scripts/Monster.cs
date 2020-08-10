@@ -36,8 +36,8 @@ public class Monster : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(spawnClip);
         animator = GetComponent<Animator>();
-        target = GameObject.FindWithTag("ScriptManager").GetComponent<Player>();
-        healthbar = GameObject.FindWithTag("HealthBar").GetComponent<HealthBar>();
+        target = GameObject.Find("ScriptManager").GetComponent<Player>();
+        healthbar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
         currHealth = maxHealth;
     }
 
@@ -46,9 +46,10 @@ public class Monster : MonoBehaviour
     {
         if (monsterState == State.ALIVE)
         {
-            navMeshAgent.SetDestination(GameObject.FindWithTag("MainCamera").transform.position);
+            Vector3 targetPos = GameObject.FindWithTag("MainCamera").transform.position;
+            navMeshAgent.SetDestination(targetPos);
 
-            Vector3 distanceVector = transform.position - GameObject.Find("MainCamera").transform.position;
+            Vector3 distanceVector = transform.position - targetPos;
             distanceVector.y = 0;
             float distance = distanceVector.magnitude;
 
