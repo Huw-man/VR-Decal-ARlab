@@ -29,6 +29,7 @@ public class Gun : MonoBehaviour
 
     public void Fire()
     {
+        
         audioSource.PlayOneShot(audioSource.clip);
         animator.SetTrigger("Fire");
         particleSystem.Play();
