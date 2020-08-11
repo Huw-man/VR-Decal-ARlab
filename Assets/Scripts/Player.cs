@@ -46,6 +46,6 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }

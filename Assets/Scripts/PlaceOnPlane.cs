@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.EventSystems;
 
 namespace UnityEngine.XR.ARFoundation.Samples
 {
@@ -61,6 +62,11 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         void Update()
         {
+            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            {
+                // ignore UI touch events
+                return;
+            }
             if (!TryGetTouchPosition(out Vector2 touchPosition))
                 return;
 
