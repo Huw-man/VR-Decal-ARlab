@@ -80,10 +80,10 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 {
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
                 }
-                else
-                {
-                    spawnedObject.transform.position = hitPose.position;
-                }
+                //else
+                //{
+                //    spawnedObject.transform.position = hitPose.position;
+                //}
             }
         }
 
