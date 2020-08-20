@@ -62,11 +62,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         void Update()
         {
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-            {
-                // ignore UI touch events
-                return;
-            }
             if (!TryGetTouchPosition(out Vector2 touchPosition))
                 return;
 
