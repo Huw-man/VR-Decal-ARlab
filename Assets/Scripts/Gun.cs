@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
 
     AudioSource shoot_audio;
     AudioSource reload_audio;
+    AudioSource error_audio;
 
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class Gun : MonoBehaviour
         audioSources = GetComponents<AudioSource>();
         shoot_audio = audioSources[0];
         reload_audio = audioSources[1];
+        error_audio = audioSources[2];
         animator = transform.Find("Model").GetComponent<Animator>();
         particleSystem = transform.Find("MuzzleFlashEffect").GetComponent<ParticleSystem>();
         ammo = maxAmmo;
@@ -39,13 +41,13 @@ public class Gun : MonoBehaviour
     {
         if (!hasAmmo() && !reloading)
         {
-            reload();
+            Reload();
         }
     }
 
     public void Fire()
     {
-        if (hasAmmo())
+        if (hasAmmo() && !reloading)
         {
             shoot_audio.PlayOneShot(shoot_audio.clip);
             animator.SetTrigger("Fire");
@@ -66,6 +68,8 @@ public class Gun : MonoBehaviour
             }
             ammo -= 1;
             ammo_bar.SetAmmo(ammo);
+        } else {
+            Error();
         }
     }
 
@@ -76,23 +80,31 @@ public class Gun : MonoBehaviour
 
     private IEnumerator _reload()
     {
-        if (ammo < maxAmmo)
-        {
-            reloading = true;
-            // animation for 2 secs
-            Debug.Log("Start reloading at: " + Time.time);
-            reload_audio.PlayOneShot(reload_audio.clip);
-            yield return new WaitForSeconds(2);
-            Debug.Log("End reloading at: " + Time.time);
-            ammo = maxAmmo;
-            ammo_bar.SetAmmo(ammo);
-            reloading = false;
+        reloading = true;
+        // 2 sec animation
+        Debug.Log("Start reloading at: " + Time.time);
+        reload_audio.PlayOneShot(reload_audio.clip);
+        yield return new WaitForSeconds(2);
+        Debug.Log("End reloading at: " + Time.time);
+        ammo = maxAmmo;
+        ammo_bar.SetAmmo(ammo);
+        reloading = false;
 
+    }
+
+    public void Reload()
+    {
+        // second reloading if check required due to reload button
+        if (!reloading && ammo < maxAmmo)
+        {
+            StartCoroutine(_reload());
+        } else {
+            Error();
         }
     }
 
-    public void reload()
+    public void Error()
     {
-        StartCoroutine(_reload());
+        error_audio.PlayOneShot(error_audio.clip);
     }
 }
