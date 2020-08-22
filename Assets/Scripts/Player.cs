@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         now = Time.time;
-        if ((now - start) > rechargeDelay && !recharging)
+        if ((now - start) > rechargeDelay && !recharging && shield < maxShield)
         {
             start = now;
             coroutine = _recharge();

@@ -10,7 +10,6 @@ public class Monster : MonoBehaviour
     public int damage;
     private Player target;
 
-
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
     private Animator animator;
@@ -32,8 +31,7 @@ public class Monster : MonoBehaviour
 
     public float sinkSpeed;
 
-
-
+    Collider hitbox;
 
     void Start()
     {
@@ -44,6 +42,7 @@ public class Monster : MonoBehaviour
         target = GameObject.Find("ScriptManager").GetComponent<Player>();
         currHealth = maxHealth;
         ScoreBoard = GameObject.Find("Score").GetComponent<Score>();
+        hitbox = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -95,6 +94,7 @@ public class Monster : MonoBehaviour
         navMeshAgent.isStopped = true;
         animator.SetTrigger("Dead");
         ScoreBoard.AddPoint();
+        hitbox.enabled = false;
     }
 
     public void StartSinking()

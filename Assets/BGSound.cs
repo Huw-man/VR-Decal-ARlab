@@ -52,7 +52,7 @@ public class BGSound : MonoBehaviour
         foreach (AudioClip t in tracks)
         {
             currWeight = weights[t];
-            if (n >= sum && n < (sum + 100 * currWeight) && !found) {
+            if (n >= sum && n < (sum + 100 * currWeight)) {
                 choice = t;
                 foundWeight = weights[t];
                 found = true;
