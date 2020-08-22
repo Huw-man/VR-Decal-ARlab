@@ -56,7 +56,7 @@ public class Monster : MonoBehaviour
             {
                 animator.SetBool("Attack", true);
             }
-        }else if (monsterState == State.SINKING)
+        } else if (monsterState == State.SINKING)
         {
             float sinkDistance = sinkSpeed * Time.deltaTime;
             transform.Translate(new Vector3(0, -sinkDistance, 0));
