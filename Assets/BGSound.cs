@@ -43,7 +43,7 @@ public class BGSound : MonoBehaviour
     {
         int n = Random.Range(0, 100);
         float sum = 0f;
-        AudioClip choice = audioSource.clip;
+        AudioClip choice = null;
         float currWeight;
         float foundWeight = 0f;
         bool found = false;

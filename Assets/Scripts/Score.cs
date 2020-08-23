@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour	
+public class Score : MonoBehaviour  
 {
-	private Text scoreBoard;
+    private Text scoreBoard;
 
-	private int score;
+    private int score;
 
-	private int highScore;
+    private int highScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +24,12 @@ public class Score : MonoBehaviour
         scoreBoard.text = "Score: " + score.ToString();
     }
 
-    public void AddPoint()
+    public void AddPoints(int add = 1)
     {
-    	score += 1;
-    	if (score > highScore)
-    	{
-    		PlayerPrefs.SetInt("high_score", score);
-    	}
+        score += add;
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("high_score", score);
+        }
     }
 }

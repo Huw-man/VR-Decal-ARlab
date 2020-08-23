@@ -33,6 +33,8 @@ public class Monster : MonoBehaviour
 
     Collider hitbox;
 
+    private string difficulty;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -43,6 +45,7 @@ public class Monster : MonoBehaviour
         currHealth = maxHealth;
         ScoreBoard = GameObject.Find("Score").GetComponent<Score>();
         hitbox = GetComponent<Collider>();
+        difficulty = PlayerPrefs.GetString("difficulty", "medium");
     }
 
     // Update is called once per frame
@@ -93,7 +96,19 @@ public class Monster : MonoBehaviour
         audioSource.PlayOneShot(dieClip);
         navMeshAgent.isStopped = true;
         animator.SetTrigger("Dead");
-        ScoreBoard.AddPoint();
+        // Can base # of points gained off of difficulty multipliers
+        if (difficulty == "easy")
+        {
+            ScoreBoard.AddPoints(1);
+        }
+        else if (difficulty == "medium")
+        {
+            ScoreBoard.AddPoints(2);
+        }
+        else if (difficulty == "hard")
+        {
+            ScoreBoard.AddPoints(4);
+        }
         hitbox.enabled = false;
     }
 
