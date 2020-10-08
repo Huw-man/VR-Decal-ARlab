@@ -9,7 +9,6 @@ public class Monster : MonoBehaviour
 
     public int damage;
     private Player target;
-    private HealthBar healthbar;
 
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
@@ -18,6 +17,8 @@ public class Monster : MonoBehaviour
     public AudioClip spawnClip;
     public AudioClip hitClip;
     public AudioClip dieClip;
+
+    private Score ScoreBoard;
 
     public enum State
     {
@@ -30,6 +31,10 @@ public class Monster : MonoBehaviour
 
     public float sinkSpeed;
 
+    Collider hitbox;
+
+    private string difficulty;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -37,8 +42,10 @@ public class Monster : MonoBehaviour
         audioSource.PlayOneShot(spawnClip);
         animator = GetComponent<Animator>();
         target = GameObject.Find("ScriptManager").GetComponent<Player>();
-        healthbar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
         currHealth = maxHealth;
+        ScoreBoard = GameObject.Find("Score").GetComponent<Score>();
+        hitbox = GetComponent<Collider>();
+        difficulty = PlayerPrefs.GetString("difficulty", "medium");
     }
 
     // Update is called once per frame
@@ -56,7 +63,7 @@ public class Monster : MonoBehaviour
             {
                 animator.SetBool("Attack", true);
             }
-        }else if (monsterState == State.SINKING)
+        } else if (monsterState == State.SINKING)
         {
             float sinkDistance = sinkSpeed * Time.deltaTime;
             transform.Translate(new Vector3(0, -sinkDistance, 0));
@@ -66,7 +73,6 @@ public class Monster : MonoBehaviour
     public void Attack()
     {
         target.Hurt(damage);
-        healthbar.SetHealth(target.getHealth());
         Debug.Log(target.getHealth());
         audioSource.PlayOneShot(hitClip);
     }
@@ -90,6 +96,20 @@ public class Monster : MonoBehaviour
         audioSource.PlayOneShot(dieClip);
         navMeshAgent.isStopped = true;
         animator.SetTrigger("Dead");
+        // Can base # of points gained off of difficulty multipliers
+        if (difficulty == "easy")
+        {
+            ScoreBoard.AddPoints(1);
+        }
+        else if (difficulty == "medium")
+        {
+            ScoreBoard.AddPoints(2);
+        }
+        else if (difficulty == "hard")
+        {
+            ScoreBoard.AddPoints(4);
+        }
+        hitbox.enabled = false;
     }
 
     public void StartSinking()
